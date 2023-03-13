@@ -1,11 +1,10 @@
 # Redash
 
 
-/*
 Изначально посмотрим на общую сумму продаж в разрезе каждой страны по месяцам. Видим общую динамику продаж и лидирующих стран. 
 Великобритания на данном графике не отображена, т.к. у нас британский интернет-магазин и основные продажи в Великобритании.
-*/
 
+```sql
     SELECT
         Country,
         toStartOfMonth(InvoiceDate) AS Month,
@@ -14,7 +13,7 @@
     WHERE Quantity > 0 AND Country IN ('Netherlands','EIRE','Australia','Germany','France')
     GROUP BY Country, Month
     ORDER BY Sum_total_price_by_month DESC
-	
+```	
 	
 	
 /*
