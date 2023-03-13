@@ -186,13 +186,13 @@ LIMIT 10
     
 <p align="center">
 
-  <img width="560" height="350" src="https://github.com/Juldid/Redash/blob/main/Redash%201.JPG">
+  <img width="660" height="450" src="https://github.com/Juldid/Redash/blob/main/Redash%201.JPG">
 
 </p>
 
 <p align="center">
 
-  <img width="560" height="350" src="https://https://github.com/Juldid/Redash/blob/main/Redash%202.JPG">
+  <img width="560" height="350" src="https://github.com/Juldid/Redash/blob/main/Redash%202.JPG">
 
 </p>
 
