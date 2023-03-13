@@ -184,3 +184,20 @@ LIMIT 10
     ORDER BY Count_orders DESC 
  ```
     
+<p align="center">
+
+  <img width="560" height="350" src="https://github.com/Juldid/Data_analysis_e_commerce/blob/main/Monetary%20Grid.JPG">
+
+</p>
+
+<p align="center">
+
+  <img width="560" height="350" src="https://github.com/Juldid/Data_analysis_e_commerce/blob/main/Monetary%20Grid.JPG">
+
+</p>
+
+<p align="center">
+
+  <img width="560" height="350" src="https://github.com/Juldid/Data_analysis_e_commerce/blob/main/Monetary%20Grid.JPG">
+
+</p>
