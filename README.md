@@ -186,18 +186,18 @@ LIMIT 10
     
 <p align="center">
 
-  <img width="560" height="350" src="https://github.com/Juldid/Data_analysis_e_commerce/blob/main/Monetary%20Grid.JPG">
+  <img width="560" height="350" src="https://github.com/Juldid/Redash/blob/main/Redash%201.JPG">
 
 </p>
 
 <p align="center">
 
-  <img width="560" height="350" src="https://github.com/Juldid/Data_analysis_e_commerce/blob/main/Monetary%20Grid.JPG">
+  <img width="560" height="350" src="https://https://github.com/Juldid/Redash/blob/main/Redash%202.JPG">
 
 </p>
 
 <p align="center">
 
-  <img width="560" height="350" src="https://github.com/Juldid/Data_analysis_e_commerce/blob/main/Monetary%20Grid.JPG">
+  <img width="560" height="350" src="https://github.com/Juldid/Redash/blob/main/Redash%203.JPG">
 
 </p>
