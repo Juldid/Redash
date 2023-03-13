@@ -69,31 +69,31 @@ GROUP BY Countries;
 Обратим внимание, что также наблюдаем с сентября 2011 результаты успешной рекламной компании, т.к. видим приток новых клиентов.
 
 ```sql
-with uniq1 as 
-(SELECT distinct 
-    CustomerID,
-    toStartOfMonth(InvoiceDate) as Month,
-    multiIf(Country='United Kingdom',Country,'Other') as All_countries
-FROM default.retail
-ORDER BY Month, CustomerID, All_countries
-),
+    with uniq1 as 
+    (SELECT distinct 
+        CustomerID,
+        toStartOfMonth(InvoiceDate) as Month,
+        multiIf(Country='United Kingdom',Country,'Other') as All_countries
+    FROM default.retail
+    ORDER BY Month, CustomerID, All_countries
+    ),
 
-uniq2 as 
-(SELECT 
-    CustomerID,
-    Month,
-    All_countries,
-    dense_rank() OVER (PARTITION BY CustomerID order by Month, All_countries) RNK
-FROM uniq1)
+    uniq2 as 
+    (SELECT 
+        CustomerID,
+        Month,
+        All_countries,
+        dense_rank() OVER (PARTITION BY CustomerID order by Month, All_countries) RNK
+    FROM uniq1)
 
-SELECT 
-    Month,
-    All_countries,
-    countIf(CustomerID, RNK = 1) as Uniq_count_customer
-FROM uniq2
-GROUP BY Month, All_countries
-HAVING Uniq_count_customer!=0
-ORDER BY Month, All_countries
+    SELECT 
+        Month,
+        All_countries,
+        countIf(CustomerID, RNK = 1) as Uniq_count_customer
+    FROM uniq2
+    GROUP BY Month, All_countries
+    HAVING Uniq_count_customer!=0
+    ORDER BY Month, All_countries
 ```
 
 В разрезе по дням видим, что 09.12.2011 у нас аномально высокая сумма продаж. Сгруппировав продажи по странам, получаем, что в этот день основное количество продаж было в Великобритании.
@@ -115,14 +115,14 @@ ORDER BY Month, All_countries
 ТОП-10 продуктов по сумме продаж
 
 ```sql
-SELECT 
-    StockCode,
-    Description,
-    ROUND(SUM(Quantity * UnitPrice)) AS Total_sum
-FROM default.retail
-GROUP BY StockCode, Description
-ORDER BY Total_sum DESC
-LIMIT 10
+    SELECT 
+        StockCode,
+        Description,
+        ROUND(SUM(Quantity * UnitPrice)) AS Total_sum
+    FROM default.retail
+    GROUP BY StockCode, Description
+    ORDER BY Total_sum DESC
+    LIMIT 10
 ```
 
 ТОП-10 возвратов (по сумме) смотрим по клиенту и по стране клиента.
@@ -132,14 +132,14 @@ LIMIT 10
 Пожалуй, это не самые интересные нам клиенты и стоит повременить с персональной скидкой для них.
 
 ```sql
-SELECT 
-    Country || ' ' || toString(CustomerID) AS Client,
-    ROUND(SUM(Quantity*UnitPrice)) AS Sum_return
-FROM default.retail
-WHERE Quantity < 0
-GROUP BY Client
-ORDER BY Sum_return
-LIMIT 10
+    SELECT 
+        Country || ' ' || toString(CustomerID) AS Client,
+        ROUND(SUM(Quantity*UnitPrice)) AS Sum_return
+    FROM default.retail
+    WHERE Quantity < 0
+    GROUP BY Client
+    ORDER BY Sum_return
+    LIMIT 10
 ```
 
 Посмотрим на ТОП-10 клиентов по сумме покупок за год. А также посмотрим, как эти клиенты совершали покупки в течение года, был ли рост суммы покупок. 
@@ -186,18 +186,18 @@ LIMIT 10
     
 <p align="center">
 
-  <img width="760" height="550" src="https://github.com/Juldid/Redash/blob/main/Redash%201.JPG">
+  <img width="760" height="650" src="https://github.com/Juldid/Redash/blob/main/Redash%201.JPG">
 
 </p>
 
 <p align="center">
 
-  <img width="760" height="550" src="https://github.com/Juldid/Redash/blob/main/Redash%202.JPG">
+  <img width="760" height="650" src="https://github.com/Juldid/Redash/blob/main/Redash%202.JPG">
 
 </p>
 
 <p align="center">
 
-  <img width="760" height="550" src="https://github.com/Juldid/Redash/blob/main/Redash%203.JPG">
+  <img width="760" height="650" src="https://github.com/Juldid/Redash/blob/main/Redash%203.JPG">
 
 </p>
