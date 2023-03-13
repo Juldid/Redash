@@ -186,18 +186,18 @@ GROUP BY Countries;
     
 <p align="center">
 
-  <img width="960" height="650" src="https://github.com/Juldid/Redash/blob/main/Redash%201.JPG">
+  <img width="1060" height="650" src="https://github.com/Juldid/Redash/blob/main/Redash%201.JPG">
 
 </p>
 
 <p align="center">
 
-  <img width="960" height="650" src="https://github.com/Juldid/Redash/blob/main/Redash%202.JPG">
+  <img width="1060" height="650" src="https://github.com/Juldid/Redash/blob/main/Redash%202.JPG">
 
 </p>
 
 <p align="center">
 
-  <img width="960" height="650" src="https://github.com/Juldid/Redash/blob/main/Redash%203.JPG">
+  <img width="1060" height="650" src="https://github.com/Juldid/Redash/blob/main/Redash%203.JPG">
 
 </p>
